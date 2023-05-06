@@ -1,0 +1,45 @@
+{
+  "name": "juststeveking/http-status-code",
+  "description": "A simple class to return correct status codes for http responses",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "role": "Developer",
+      "name": "Steve McDougall",
+      "email": "juststevemcd@gmail.com",
+      "homepage": "https://www.juststeveking.uk"
+    }
+  ],
+  "require": {
+    "php": "^8.1"
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "autoload": {
+    "psr-4": {
+      "JustSteveKing\\StatusCode\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JustSteveKing\\Tests\\StatusCode\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "laravel/pint": "^0.2.3",
+    "phpunit/phpunit": "^9.5.4",
+    "thecodingmachine/phpstan-safe-rule": "^1.0"
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit",
+    "analyse": "./vendor/bin/phpstan analyse --memory-limit=256m",
+    "prepare": [
+      "./vendor/bin/phpunit",
+      "./vendor/bin/pint",
+      "./vendor/bin/phpstan analyse --memory-limit=256m"
+    ]
+  }
+}
